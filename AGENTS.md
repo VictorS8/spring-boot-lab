@@ -33,7 +33,7 @@ A partir do módulo 9, os exercícios **fazem evoluir um único projeto** (`clin
 ## Estrutura
 
 ```
-~/Projects/spring-boot-lab/             esta pasta (repositório Git de estudo, privado)
+~/Projects/spring-boot-lab/             esta pasta (repositório Git de estudo, público)
   AGENTS.md, CLAUDE.md
   docs/roteiro-java-spring-boot.md      o roteiro de estudos
   docs/projeto-final-java-spring-boot.md  intuito, decisões e especificação do projeto final
