@@ -1,0 +1,26 @@
+# Projeto principal: tem repositório Git próprio (público, portfólio)
+clinic-billing-api/
+
+# Saída de compilação
+out/
+target/
+*.class
+
+# IntelliJ IDEA: arquivos pessoais (as configurações do projeto em .idea/ são versionadas)
+.idea/workspace.xml
+.idea/shelf/
+.idea/httpRequests/
+.idea/dataSources/
+.idea/dataSources.local.xml
+*.iws
+
+# Configuração local do mise e do Claude Code
+mise.local.toml
+.mise.local.toml
+.claude/settings.local.json
+
+# Logs, variáveis de ambiente e arquivos temporários
+*.log
+.env
+*.swp
+*~
