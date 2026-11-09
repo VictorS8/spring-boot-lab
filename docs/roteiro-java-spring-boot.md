@@ -202,7 +202,7 @@ O prompt vira `mysql>`. Rode `SHOW DATABASES;` e confira que `clinic_billing` e 
 **Conceitos:**
 1. **Compilar**: o `javac` transforma `.java` (texto) em `.class` (bytecode).
 2. **Executar**: o `java` inicia a JVM e chama o método `main` da classe que você indicar.
-3. **`public static void main(String[] args)`**: o ponto de entrada. `static` porque a JVM chama sem criar objeto; `args` são os argumentos da linha de comando.
+3. **`static void main(String[] args)`**: o ponto de entrada. `static` porque a JVM chama sem criar objeto; `args` são os argumentos da linha de comando. Até o Java 24 ele precisava ser `public`; no Java 25 (JEP 512) pode ficar sem.
 4. **Pacote (`package`)**: o "endereço" da classe. `com.clinicbilling.core.App` precisa estar em `com/clinicbilling/core/App.java`.
 5. **Classpath**: a lista de pastas e `.jar` onde a JVM procura as classes.
 6. **Execução direta de arquivo**: `java Arquivo.java` compila na memória e roda. Ótimo para exercícios curtos (a pasta `playground/`).
@@ -273,7 +273,7 @@ package com.clinicbilling.core;
 
 public class App {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         System.out.println("Clinic billing core is running");
         System.out.println("Java " + System.getProperty("java.version"));
         for (String arg : args) {
@@ -368,7 +368,7 @@ package com.clinicbilling.core;
 
 public class M02Demo {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Patient a = new Patient("  Ana Souza ", "12345678909", "ana@email.com");
         Patient b = new Patient("Ana Souza", "12345678909", "ana@email.com");
         System.out.println(a);
@@ -445,9 +445,11 @@ import java.time.temporal.ChronoUnit;
 
 public class M03Demo {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         System.out.println("double: " + (0.1 + 0.2));
         System.out.println("BigDecimal(String): " + new BigDecimal("0.1").add(new BigDecimal("0.2")));
+        // Errado de propósito: mostra o erro que o double passa para o BigDecimal
+        //noinspection UnpredictableBigDecimalConstructorCall
         System.out.println("BigDecimal(double): " + new BigDecimal(0.1));
 
         BigDecimal two = new BigDecimal("2.0");
@@ -525,7 +527,7 @@ import java.util.stream.Collectors;
 
 public class M04Demo {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Patient ana = new Patient("Ana Souza", "12345678909", "ana@email.com");
         Patient bruno = new Patient("Bruno Lima", "98765432100", "bruno@email.com");
         LocalDate today = LocalDate.of(2026, 12, 5);
@@ -692,7 +694,7 @@ import java.time.LocalDate;
 
 public class M05Demo {
 
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Patient ana = new Patient("Ana Souza", "12345678909", "ana@email.com");
         LocalDate today = LocalDate.of(2026, 12, 5);
         Charge charge = new Charge(1, ana, "Consulta", new BigDecimal("250.00"), LocalDate.of(2026, 11, 30));
@@ -912,7 +914,7 @@ import java.nio.charset.StandardCharsets;
 
 public class RawHttpServer {
 
-    public static void main(String[] args) throws IOException {
+    static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/hello", RawHttpServer::hello);
         server.start();
@@ -1157,7 +1159,7 @@ public class Patient {
 
     private Long id;
     private String name;
-    private String cpf;
+    private final String cpf;
     private String email;
 
     public Patient(String name, String cpf, String email) {
@@ -3590,7 +3592,7 @@ Se quiser, dá para criar um `AGENTS.md` e um `CLAUDE.md` para o repositório, n
 ## G. Checklist de progresso
 
 - [x] Módulo 0: Ambiente
-- [ ] Módulo 1: Do código de teste ao programa
+- [x] Módulo 1: Do código de teste ao programa
 - [ ] Módulo 2: Classes, records e enums
 - [ ] Módulo 3: Dinheiro e datas
 - [ ] Módulo 4: Coleções, lambdas e streams
