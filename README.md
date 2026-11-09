@@ -10,17 +10,17 @@ Meu laboratório de estudos de backend com **Java 25** e **Spring Boot 4.1**, se
 
 ## O que é abordado
 
-| Fase | Módulos | Tema |
-|------|---------|------|
-| 0 | 0 | Ambiente: JDK, Maven, IntelliJ e MySQL no Docker |
-| 1 | 1 a 6 | Java para aplicações: records, BigDecimal, `java.time`, streams, exceções e JUnit |
-| 2 | 7 a 12 | HTTP, servidor sem framework, injeção de dependência, API REST, validação e testes web |
-| 3 | 13 a 18 | MySQL, Flyway, JPA, N+1, transações e testes de repositório |
-| 4 | 19 a 22 | Regras de negócio: status derivado, pagamentos, Mockito e CPF |
-| 5 | 23 a 26 | Paginação, OpenAPI, Docker e CI |
-| 6 | 27 a 29 | Idempotência, testes com Playwright e Spring Security |
-| 7 | 30 | Projeto final |
-| Trilha | L1 a L6 | Lógica e estruturas de dados (Beecrowd e LeetCode) |
+| Fase   | Módulos | Tema                                                                                   |
+|--------|---------|----------------------------------------------------------------------------------------|
+| 0      | 0       | Ambiente: JDK, Maven, IntelliJ e MySQL no Docker                                       |
+| 1      | 1 a 6   | Java para aplicações: records, BigDecimal, `java.time`, streams, exceções e JUnit      |
+| 2      | 7 a 12  | HTTP, servidor sem framework, injeção de dependência, API REST, validação e testes web |
+| 3      | 13 a 18 | MySQL, Flyway, JPA, N+1, transações e testes de repositório                            |
+| 4      | 19 a 22 | Regras de negócio: status derivado, pagamentos, Mockito e CPF                          |
+| 5      | 23 a 26 | Paginação, OpenAPI, Docker e CI                                                        |
+| 6      | 27 a 29 | Idempotência, testes com Playwright e Spring Security                                  |
+| 7      | 30      | Projeto final                                                                          |
+| Trilha | L1 a L6 | Lógica e estruturas de dados (Beecrowd e LeetCode)                                     |
 
 O progresso fica no checklist do apêndice G do roteiro.
 
